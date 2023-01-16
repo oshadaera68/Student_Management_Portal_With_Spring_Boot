@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+.main {
+    position: absolute;
+    left: 40rem;
+    top: 10vh;
+}
+
+.area {
+    position: absolute;
+    font-size: 23px;
+    font-family: 'Titillium Web', sans-serif;
+    top: 23vh;
+    left: 33rem;
+}
+
+#name1 {
+    position: relative;
+    width: 31rem;
+    left: 38rem;
+    top: 15vh;
+}
+
+.area2 {
+    position: absolute;
+    font-size: 23px;
+    font-family: 'Titillium Web', sans-serif;
+    top: 16.2rem;
+    left: 33rem;
+}
+
+#email {
+    position: relative;
+    width: 31rem;
+    left: 38rem;
+    top: 19vh;
+}
+
+.area3 {
+    position: absolute;
+    font-size: 23px;
+    font-family: 'Titillium Web', sans-serif;
+    top: 45vh;
+    left: 33rem;
+}
+
+#combo {
+    position: absolute;
+    width: 66vh;
+    left: 38rem;
+    top: 21rem;
+}
+
+#submitStudent {
+    position: absolute;
+    left: 44rem;
+    top: 29rem;
+    width: 12rem;
+}

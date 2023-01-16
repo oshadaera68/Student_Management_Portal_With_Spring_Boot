@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Class</title>
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/addclass.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+<section class="position-relative vw-100 vh-100 d-flex flex-column">
+    <nav class="navbar navbar-expand-lg navbar bg-dark shadow-lg position-relative">
+        <div class="container-fluid">
+            <a class="navbar-brand active text-light" href="#">
+                SMS Portal
+            </a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 naviItems">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="addstudent.html">Create New student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="addclass.html">Create New class</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="managestudents.html">Manage Students</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <h2 class="main2">Create New Class</h2>
+    </div>
+
+    <form>
+        <div class="mb-3">
+            <label class="form-label text-center area3" for="name">Name:</label>
+            <input class="form-control" id="name" placeholder="Oshada Eranga">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label text-center area4">Instructor:</label>
+            <select class="form-select" id="combo1">
+                <option selected>Select Instructor</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" id="addStudent" type="button">Add >></button>
+            <button class="btn btn-danger" id="removeStudent" type="button"> << Remove</button>
+            <button class="btn btn-success" id="submit" type="button"> Submit</button>
+        </div>
+    </form>
+
+    <div>
+        <h2 class="main3">Add / Remove Students to this class</h2>
+    </div>
+
+    <div class="list-group list" id="addList">
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+
+    <div class="list-group list1" id="removeList">
+        <ul class="list-group">
+            <li class="list-group-item">An item</li>
+            <li class="list-group-item">A second item</li>
+            <li class="list-group-item">A third item</li>
+            <li class="list-group-item">A fourth item</li>
+            <li class="list-group-item">And a fifth one</li>
+        </ul>
+    </div>
+
+</section>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/boostrap/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function clearForm() {
+        $("#name").val("");
+        $("#combo1").val("");
+    }
+
+    $("#submit").click(function () {
+        var settings = {
+            "url": "http://localhost:8080/app/class",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "data": {
+                "txtName": $("#name").val(),
+                "cmbInstructor": $("#combo1").val()
+            },
+        };
+        clearForm();
+
+        $.ajax(settings).done(function (response) {
+            alert(response);
+        });
+    });
+
+
+</script>
+</body>
+</html>

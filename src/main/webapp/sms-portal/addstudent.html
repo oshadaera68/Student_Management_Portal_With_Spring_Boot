@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/addstudent.css" rel="stylesheet">
+    <link href="assets/boostrap/css/bootstrap.min.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+</head>
+<body>
+
+<section class="position-absolute vw-100 vh-100 d-flex flex-column">
+    <nav class="navbar navbar-expand-lg navbar bg-dark shadow-lg posNavi position-relative">
+        <div class="container-fluid">
+            <a class="navbar-brand active text-light" href="#">
+                SMS Portal
+            </a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler"
+                    data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 naviItems">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="addstudent.html">Create New student</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="addclass.html">Create New class</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" href="managestudents.html">Manage Students</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div>
+        <h2 class="main">Create New Student</h2>
+    </div>
+
+    <form>
+        <div class="mb-3">
+            <label class="form-label text-center area" for="name1">Name:</label>
+            <input class="form-control" id="name1" placeholder="Oshada Eranga" type="email">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label text-center area2" for="email">Email:</label>
+            <input class="form-control" id="email" placeholder="Oshada Eranga" type="email">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label text-center area3">Grade:</label>
+            <select class="form-select" id="combo">
+                <option selected>Select Grade</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-success" id="submitStudent" type="button">Submit</button>
+        </div>
+    </form>
+</section>
+
+
+<script src="assets/boostrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    function clearForm() {
+        $("#name").val("");
+        $("#email").val("");
+        $("#combo1").val("");
+    }
+
+    $("#submitStudent").click(function () {
+        var settings = {
+            "url": "http://localhost:8081/app/student",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            "data": {
+                "txtName": $("#name").val(),
+                "txtEmail": $("#email").val(),
+                "cmbInstructor": $("#combo").val()
+            },
+        };
+        clearForm();
+
+        $.ajax(settings).done(function (response) {
+            alert(response);
+        });
+    });
+
+</script>
+</body>
+</html>

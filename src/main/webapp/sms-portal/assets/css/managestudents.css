@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+.main4 {
+    position: absolute;
+    left: 40rem;
+    top: 10vh;
+}
+
+.manageStuDiv {
+    position: absolute;
+    height: 55vh;
+    background-color: white;
+    top: 10rem;
+    width: 80rem;
+    flex-direction: row;
+    left: 16vh;
+}
+
+.main5 {
+    position: absolute;
+    top: 39.2rem;
+    left: 8.5vh;
+}
+
+.main6 {
+    position: absolute;
+    top: 39rem;
+    left: 69vw;
+}
