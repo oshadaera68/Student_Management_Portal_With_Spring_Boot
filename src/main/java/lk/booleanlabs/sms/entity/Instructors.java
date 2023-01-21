@@ -16,6 +16,7 @@ import javax.persistence.*;
 @ToString
 public class Instructors {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int insId;
     private String name;
     @ManyToOne(cascade = {CascadeType.REFRESH, CascadeType.DETACH})
